@@ -120,6 +120,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     try {
       await signOut(auth);
       if (user?.uid) {
+        await setOnlineStatus(user.uid, false);
         const userRef = doc(db, "users", user.uid);
         await updateDoc(userRef, { pushToken: "" }); // Clear the push token on logout
       }
