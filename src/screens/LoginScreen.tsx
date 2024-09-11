@@ -1,7 +1,7 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import React, { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
-import { ActivityIndicator, Button, Text, TextInput, View } from "react-native";
+import { ActivityIndicator, Button, ScrollView, Text, TextInput } from "react-native";
 import * as yup from "yup";
 import { useAuth } from "../context/AuthContext";
 import { styles } from "../styles/LoginScreenStyles";
@@ -64,7 +64,7 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>Login</Text>
 
       {firebaseError && <Text style={styles.error}>{firebaseError}</Text>}
@@ -93,7 +93,7 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
       <Text style={styles.signupLink} onPress={() => navigation.navigate("SignUp")}>
         Don't have an account? Sign Up
       </Text>
-    </View>
+    </ScrollView>
   );
 };
 

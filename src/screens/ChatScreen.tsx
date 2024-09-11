@@ -7,22 +7,28 @@ import { useAuth } from "../context/AuthContext";
 import { loadMoreMessagesPaginated, subscribeToMessagesPaginated } from "../services/chatService";
 import { styles } from "../styles/ChatScreenStyles";
 import { Message } from "../types/Message";
+import { ActiveUsersScreenNavigationProp } from "../types/Navigation";
 
 const ChatScreen = () => {
-  const { user, logout } = useAuth();
+  const { user, userData, logout } = useAuth();
   const [messages, setMessages] = useState<Message[]>([]);
   const [loading, setLoading] = useState(true);
   const [loadingMore, setLoadingMore] = useState(false);
   const [lastVisible, setLastVisible] = useState<any>(null);
   const [hasMore, setHasMore] = useState(true);
   const flatListRef = useRef<FlatList>(null);
-  const navigation = useNavigation();
+  const navigation = useNavigation<ActiveUsersScreenNavigationProp>();
 
   useEffect(() => {
     navigation.setOptions({
       headerRight: () => (
         <View style={{ marginRight: 10 }}>
           <Button title='Logout' onPress={logout} />
+        </View>
+      ),
+      headerLeft: () => (
+        <View style={{ marginLeft: 10 }}>
+          <Button title='Active Users' onPress={() => navigation.navigate("ActiveUsers")} />
         </View>
       ),
     });
@@ -85,7 +91,7 @@ const ChatScreen = () => {
         onEndReachedThreshold={0.1}
       />
 
-      <SendMessageInput userId={user?.uid} />
+      <SendMessageInput userId={user?.uid} senderName={userData?.username} />
     </KeyboardAvoidingView>
   );
 };

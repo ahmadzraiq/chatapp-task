@@ -27,31 +27,16 @@ cd chatapp-task
 npm install
 ```
 
-3. **Configure Firebase**
+3. **Login to Expo**
 
-Set up your Firebase project and add your Firebase configuration in `config/firebaseConfig.ts`. Here's an example:
+Run the following command to login to Expo with the provided credentials:
 
-```ts
-import { initializeApp } from "firebase/app";
-import { getAuth, initializeAuth, getReactNativePersistence } from "firebase/auth";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import { getFirestore } from "firebase/firestore";
-
-const firebaseConfig = {
-  apiKey: "your-api-key",
-  authDomain: "your-app-id.firebaseapp.com",
-  projectId: "your-project-id",
-  storageBucket: "your-app-id.appspot.com",
-  messagingSenderId: "your-messaging-sender-id",
-  appId: "your-app-id",
-};
-
-const app = initializeApp(firebaseConfig);
-export const auth = initializeAuth(app, {
-  persistence: getReactNativePersistence(AsyncStorage),
-});
-export const db = getFirestore(app);
+```bash
+npx expo login
 ```
+
+- **Email**: ahmadzraiqq+1@gmail.com
+- **Password**: Testing123!
 
 4. **Run the Project**
 
@@ -66,9 +51,3 @@ npm run ios
 ```bash
 npm run android
 ```
-
-## Features
-
-- **Authentication**: Users can sign up and log in using Firebase Authentication.
-- **Real-time Messaging**: Send and receive messages in real-time using Firebase Firestore.
-- **Persistent Login**: Authentication state persists between sessions using AsyncStorage.

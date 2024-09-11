@@ -13,7 +13,6 @@
     },
     "ios": {
       "bundleIdentifier": "com.voizzit.chat",
-
       "supportsTablet": true
     },
     "android": {
@@ -23,9 +22,13 @@
       },
       "package": "com.voizzit.chat"
     },
-
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "49b9098a-5410-4635-a87c-705d1c7bb0f3"
+      }
     }
   }
 }

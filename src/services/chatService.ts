@@ -3,12 +3,13 @@ import { db } from "../config/firebaseConfig";
 import { Message } from "../types/Message";
 
 // Send a message
-export const sendMessage = async (senderID: string, receiverID: string, messageText: string) => {
+export const sendMessage = async (senderID: string, receiverID: string, messageText: string, senderName?: string) => {
   try {
     await addDoc(collection(db, "messages"), {
       senderID,
       receiverID,
       messageText,
+      senderName,
       timestamp: serverTimestamp(),
     });
   } catch (error) {
