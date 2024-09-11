@@ -1,0 +1,73 @@
+{
+    "root": true,
+    "env": {
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "airbnb",
+        "@react-native-community",
+        "prettier",
+        "plugin:react/recommended",
+        "universe/native",
+        "plugin:@tanstack/eslint-plugin-query/recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "react-native",
+        "@tanstack/query",
+        "prettier"
+    ],
+    "rules": {
+        "react-native/no-unused-styles": 2,
+        "react-native/split-platform-components": 2,
+        "react-native/no-inline-styles": "off",
+        "react/no-unstable-nested-components": "off",
+        "react-native/no-color-literals": "off",
+        "react-native/no-raw-text": 0,
+        "react-native/no-single-element-style-arrays": 2,
+        "import/no-anonymous-default-export": "off",
+        "import/no-extraneous-dependencies": "off",
+        "react/function-component-definition": "off",
+        "no-unused-vars": "warn",
+        "react-hooks/exhaustive-deps": "warn",
+        "react-hooks/rules-of-hooks": "warn",
+        "prettier/prettier": [
+            "warn",
+            {
+                "endOfLine": "auto"
+            }
+        ],
+        "react/jsx-filename-extension": [
+            "warn",
+            {
+                "extensions": [
+                    ".jsx",
+                    ".js"
+                ]
+            }
+        ],
+        "import/prefer-default-export": "off",
+        "react/state-in-constructor": "off",
+        "react/static-property-placement": "off",
+        "react/jsx-props-no-spreading": "off",
+        "react/prop-types": "off",
+        "no-param-reassign": "off",
+        "no-console": "warn",
+        "react/destructuring-assignment": "off",
+        "no-alert": "warn",
+        "import/order": "off",
+        "import/no-unresolved": "off",
+        "import/no-cycle": "off",
+        "global-require": "off",
+        "prefer-template": "off",
+        "import/no-relative-packages": "off"
+    }
+}

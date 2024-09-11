@@ -1,0 +1,17 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "firsttris.vscode-jest-runner",
+    "streetsidesoftware.code-spell-checker",
+    "aaron-bond.better-comments",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "planbcoding.vscode-react-refactor",
+    "ms-vsliveshare.vsliveshare",
+    "PKief.material-icon-theme",
+    "dsznajder.es7-react-js-snippets",
+    "ChakrounAnas.turbo-console-log",
+    "naumovs.color-highlight",
+    "jock.svg"
+  ]
+}
